@@ -47,7 +47,7 @@ class InscriptionController extends Controller
         if($request->hasFile("cv")) {
             $cv = $request->file("cv");
             $cvName = time() . "." . $cv->getClientOriginalExtension();
-            $cv->move(public_path("Cvs", $cvName));
+            $cv->move(public_path("Cvs"), $cvName);
         };
 
         return $request;
